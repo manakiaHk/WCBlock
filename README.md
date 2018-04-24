@@ -1,7 +1,7 @@
 # WCBlock
 a lightweight block library of UIKit extension
 
-
+# use as follow 
 
 ```objective-c
 
@@ -41,9 +41,7 @@ a lightweight block library of UIKit extension
     [textfiled wc_bindTextFieldEditingDidEndBlockNext:^(UITextField *textField) {
          NSLog(@"textfiled did end editing");
     }];
-    
-    ///....
-
+   
     ///view
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(40, CGRectGetMaxY(textfiled.frame)+15, 80, 40)];
     view.backgroundColor = [UIColor blueColor];
