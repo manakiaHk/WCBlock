@@ -74,7 +74,7 @@
 		35CAF9DD208F420A00163DED /* UIGestureRecognizer+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+WCBlock.m"; sourceTree = "<group>"; };
 		35CAF9DE208F420A00163DED /* UITextView+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WCBlock.h"; sourceTree = "<group>"; };
 		35CAF9DF208F420A00163DED /* UISwitch+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+WCBlock.m"; sourceTree = "<group>"; };
-		35CAF9E0208F420A00163DED /* WCBlockExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBlockExtension.h; sourceTree = "<group>"; };
+		35CAF9E0208F420A00163DED /* WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBlock.h; sourceTree = "<group>"; };
 		35CAF9E1208F420A00163DED /* NSObject+WCKVOBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WCKVOBlock.h"; sourceTree = "<group>"; };
 		35CAF9E2208F420A00163DED /* UIControl+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+WCBlock.h"; sourceTree = "<group>"; };
 		35CAF9E3208F420A00163DED /* UISegmentedControl+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+WCBlock.h"; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 				35CAF9DD208F420A00163DED /* UIGestureRecognizer+WCBlock.m */,
 				35CAF9DE208F420A00163DED /* UITextView+WCBlock.h */,
 				35CAF9DF208F420A00163DED /* UISwitch+WCBlock.m */,
-				35CAF9E0208F420A00163DED /* WCBlockExtension.h */,
+				35CAF9E0208F420A00163DED /* WCBlock.h */,
 				35CAF9E1208F420A00163DED /* NSObject+WCKVOBlock.h */,
 				35CAF9E2208F420A00163DED /* UIControl+WCBlock.h */,
 				35CAF9E3208F420A00163DED /* UISegmentedControl+WCBlock.h */,
@@ -500,12 +500,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D448D4BJ77;
-				INFOPLIST_FILE = WCBlock/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WCBlockDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-163.weicheng0-0.WCBlock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -514,12 +517,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D448D4BJ77;
-				INFOPLIST_FILE = WCBlock/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WCBlockDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-163.weicheng0-0.WCBlock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

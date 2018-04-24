@@ -3,7 +3,7 @@
 //  WCBlockKit
 //
 //  Created by zhao weicheng on 2018/4/17.
-//  Copyright © 2018年 hello. All rights reserved.
+//  Copyright © 2018年 weichengz. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
