@@ -15,6 +15,16 @@
 		35CAF9B0208F410800163DED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9AF208F410800163DED /* main.m */; };
 		35CAF9BA208F410900163DED /* WCBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9B9208F410900163DED /* WCBlockTests.m */; };
 		35CAF9C5208F410900163DED /* WCBlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9C4208F410900163DED /* WCBlockUITests.m */; };
+		35CAF9E8208F420A00163DED /* UITextView+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9D4208F420A00163DED /* UITextView+WCBlock.m */; };
+		35CAF9E9208F420A00163DED /* UIControl+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9D6208F420A00163DED /* UIControl+WCBlock.m */; };
+		35CAF9EA208F420A00163DED /* NSObject+WCKVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9D7208F420A00163DED /* NSObject+WCKVOBlock.m */; };
+		35CAF9EB208F420A00163DED /* UISegmentedControl+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9D9208F420A00163DED /* UISegmentedControl+WCBlock.m */; };
+		35CAF9EC208F420A00163DED /* UITextField+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9DA208F420A00163DED /* UITextField+WCBlock.m */; };
+		35CAF9ED208F420A00163DED /* UIGestureRecognizer+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9DD208F420A00163DED /* UIGestureRecognizer+WCBlock.m */; };
+		35CAF9EE208F420A00163DED /* UISwitch+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9DF208F420A00163DED /* UISwitch+WCBlock.m */; };
+		35CAF9EF208F420A00163DED /* UIView+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9E4208F420A00163DED /* UIView+WCBlock.m */; };
+		35CAF9F0208F420A00163DED /* UIAlertView+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9E5208F420A00163DED /* UIAlertView+WCBlock.m */; };
+		35CAF9F1208F420A00163DED /* UISlider+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAF9E6208F420A00163DED /* UISlider+WCBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,27 @@
 		35CAF9C0208F410900163DED /* WCBlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCBlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35CAF9C4208F410900163DED /* WCBlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCBlockUITests.m; sourceTree = "<group>"; };
 		35CAF9C6208F410900163DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35CAF9D3208F420A00163DED /* UISwitch+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9D4208F420A00163DED /* UITextView+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9D5208F420A00163DED /* UIGestureRecognizer+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9D6208F420A00163DED /* UIControl+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9D7208F420A00163DED /* NSObject+WCKVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WCKVOBlock.m"; sourceTree = "<group>"; };
+		35CAF9D8208F420A00163DED /* UIView+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9D9208F420A00163DED /* UISegmentedControl+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9DA208F420A00163DED /* UITextField+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9DB208F420A00163DED /* UISlider+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9DC208F420A00163DED /* UIAlertView+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9DD208F420A00163DED /* UIGestureRecognizer+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9DE208F420A00163DED /* UITextView+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9DF208F420A00163DED /* UISwitch+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9E0208F420A00163DED /* WCBlockExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCBlockExtension.h; sourceTree = "<group>"; };
+		35CAF9E1208F420A00163DED /* NSObject+WCKVOBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WCKVOBlock.h"; sourceTree = "<group>"; };
+		35CAF9E2208F420A00163DED /* UIControl+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9E3208F420A00163DED /* UISegmentedControl+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+WCBlock.h"; sourceTree = "<group>"; };
+		35CAF9E4208F420A00163DED /* UIView+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9E5208F420A00163DED /* UIAlertView+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9E6208F420A00163DED /* UISlider+WCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+WCBlock.m"; sourceTree = "<group>"; };
+		35CAF9E7208F420A00163DED /* UITextField+WCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WCBlock.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +112,8 @@
 		35CAF994208F410800163DED = {
 			isa = PBXGroup;
 			children = (
-				35CAF99F208F410800163DED /* WCBlock */,
+				35CAF9D2208F420A00163DED /* WCBlock */,
+				35CAF99F208F410800163DED /* WCBlockDemo */,
 				35CAF9B8208F410900163DED /* WCBlockTests */,
 				35CAF9C3208F410900163DED /* WCBlockUITests */,
 				35CAF99E208F410800163DED /* Products */,
@@ -98,7 +130,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		35CAF99F208F410800163DED /* WCBlock */ = {
+		35CAF99F208F410800163DED /* WCBlockDemo */ = {
 			isa = PBXGroup;
 			children = (
 				35CAF9A0208F410800163DED /* AppDelegate.h */,
@@ -111,7 +143,7 @@
 				35CAF9AE208F410800163DED /* Info.plist */,
 				35CAF9AF208F410800163DED /* main.m */,
 			);
-			path = WCBlock;
+			path = WCBlockDemo;
 			sourceTree = "<group>";
 		};
 		35CAF9B8208F410900163DED /* WCBlockTests */ = {
@@ -130,6 +162,34 @@
 				35CAF9C6208F410900163DED /* Info.plist */,
 			);
 			path = WCBlockUITests;
+			sourceTree = "<group>";
+		};
+		35CAF9D2208F420A00163DED /* WCBlock */ = {
+			isa = PBXGroup;
+			children = (
+				35CAF9D3208F420A00163DED /* UISwitch+WCBlock.h */,
+				35CAF9D4208F420A00163DED /* UITextView+WCBlock.m */,
+				35CAF9D5208F420A00163DED /* UIGestureRecognizer+WCBlock.h */,
+				35CAF9D6208F420A00163DED /* UIControl+WCBlock.m */,
+				35CAF9D7208F420A00163DED /* NSObject+WCKVOBlock.m */,
+				35CAF9D8208F420A00163DED /* UIView+WCBlock.h */,
+				35CAF9D9208F420A00163DED /* UISegmentedControl+WCBlock.m */,
+				35CAF9DA208F420A00163DED /* UITextField+WCBlock.m */,
+				35CAF9DB208F420A00163DED /* UISlider+WCBlock.h */,
+				35CAF9DC208F420A00163DED /* UIAlertView+WCBlock.h */,
+				35CAF9DD208F420A00163DED /* UIGestureRecognizer+WCBlock.m */,
+				35CAF9DE208F420A00163DED /* UITextView+WCBlock.h */,
+				35CAF9DF208F420A00163DED /* UISwitch+WCBlock.m */,
+				35CAF9E0208F420A00163DED /* WCBlockExtension.h */,
+				35CAF9E1208F420A00163DED /* NSObject+WCKVOBlock.h */,
+				35CAF9E2208F420A00163DED /* UIControl+WCBlock.h */,
+				35CAF9E3208F420A00163DED /* UISegmentedControl+WCBlock.h */,
+				35CAF9E4208F420A00163DED /* UIView+WCBlock.m */,
+				35CAF9E5208F420A00163DED /* UIAlertView+WCBlock.m */,
+				35CAF9E6208F420A00163DED /* UISlider+WCBlock.m */,
+				35CAF9E7208F420A00163DED /* UITextField+WCBlock.h */,
+			);
+			path = WCBlock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CAF9ED208F420A00163DED /* UIGestureRecognizer+WCBlock.m in Sources */,
+				35CAF9F0208F420A00163DED /* UIAlertView+WCBlock.m in Sources */,
+				35CAF9E9208F420A00163DED /* UIControl+WCBlock.m in Sources */,
 				35CAF9A5208F410800163DED /* ViewController.m in Sources */,
+				35CAF9EB208F420A00163DED /* UISegmentedControl+WCBlock.m in Sources */,
+				35CAF9EA208F420A00163DED /* NSObject+WCKVOBlock.m in Sources */,
+				35CAF9EE208F420A00163DED /* UISwitch+WCBlock.m in Sources */,
+				35CAF9F1208F420A00163DED /* UISlider+WCBlock.m in Sources */,
+				35CAF9E8208F420A00163DED /* UITextView+WCBlock.m in Sources */,
 				35CAF9B0208F410800163DED /* main.m in Sources */,
 				35CAF9A2208F410800163DED /* AppDelegate.m in Sources */,
+				35CAF9EC208F420A00163DED /* UITextField+WCBlock.m in Sources */,
+				35CAF9EF208F420A00163DED /* UIView+WCBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
