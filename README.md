@@ -4,18 +4,6 @@ a lightweight block library of UIKit extension
 # use as follow 
 
 ```objective-c
-
-#import "ViewController.h"
-#import "WCBlock.h"
-@interface ViewController ()
-@property (nonatomic,weak) UILabel *label;
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
     ///alear
     UIAlertView *alearView = [[UIAlertView alloc]initWithTitle:@"hello" message:@"keep your dream" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     
