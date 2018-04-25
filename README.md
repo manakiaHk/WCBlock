@@ -5,7 +5,7 @@ a lightweight block library of UIKit extension
 
 ```objective-c
     ///alear
-    UIAlertView *alearView = [[UIAlertView alloc]initWithTitle:@"hello" message:@"keep your dream" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
+    UIAlertView *alearView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     
     [alearView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
         NSLog(@"clicked index: %ld",index);
@@ -13,7 +13,7 @@ a lightweight block library of UIKit extension
     [alearView show];
     
     ///textfiled
-    UITextField *textfiled = [[UITextField alloc]initWithFrame:CGRectMake(40, 40, 180, 35)];
+    UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
     [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
         NSLog(@"textfiled text:%@",value);
     }];
@@ -28,7 +28,7 @@ a lightweight block library of UIKit extension
     }];
    
     ///view
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(40, CGRectGetMaxY(textfiled.frame)+15, 80, 40)];
+    UIView *view = [[UIView alloc]initWithFrame:viewframe];
     [view wc_bindViewClickedBlockNext:^(UIView *view) {
         NSLog(@"view clicked");
     }];
@@ -47,7 +47,7 @@ a lightweight block library of UIKit extension
     
     
     ///slider
-    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(CGRectGetMaxX(label.frame)+15, label.frame.origin.y, 200, 40)];
+    UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
     __weak typeof(self) weakSelf = self;
     [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
         __strong typeof(weakSelf) self = weakSelf;
