@@ -69,7 +69,9 @@ a lightweight block library of UIKit extension
             NSLog(@"label.text= %@",newValue);
         }else;
     }];
-    
+     [self.label wc_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld changeBlockNext:^(NSString *keypath, id ofObj, NSDictionary<NSKeyValueChangeKey,id> *change) {
+        ///..
+    }];
     
     //And so on...
     
