@@ -5,12 +5,12 @@ a lightweight block library of UIKit extension
 
 ```objective-c
     ///alear
-    UIAlertView *alearView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
+    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     
-    [alearView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
+    [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
         NSLog(@"clicked index: %ld",index);
     }];
-    [alearView show];
+    [alerView show];
     
     ///textfiled
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
