@@ -6,19 +6,26 @@ a lightweight block library of UIKit extension（一个用了会上瘾的block�
 
 #import "WCBlock.h"
 ```objective-c
-    ///alear
-    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
-    
-    [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
-        NSLog(@"clicked index: %ld",index);
+   
+     ///view
+    UIView *view = [[UIView alloc]initWithFrame:viewframe];
+    [view wc_bindViewClickedBlockNext:^(UIView *view) {
+        NSLog(@"view clicked");
     }];
-    [alerView show];
     
      ////button
     UIButton *button = [[UIButton alloc]init];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
         NSLog(@"%@",sender);
     }];
+    
+     ///alear
+    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
+    
+    [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
+        NSLog(@"clicked index: %ld",index);
+    }];
+    [alerView show];
     
     ///textfiled
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
@@ -35,12 +42,6 @@ a lightweight block library of UIKit extension（一个用了会上瘾的block�
          NSLog(@"textfiled did end editing");
     }];
    
-    ///view
-    UIView *view = [[UIView alloc]initWithFrame:viewframe];
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked");
-    }];
-    
     ///segmentedControl
     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
     [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
