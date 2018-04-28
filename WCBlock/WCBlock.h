@@ -4,8 +4,8 @@
 //
 //  Created by zhao weicheng on 2018/4/18.
 //  Copyright © 2018年 weichengz. All rights reserved.
-//
-//Welcome to use "WCBlock"
+//   
+//Welcome
 #ifndef WCBlock_h
 #define WCBlock_h
 
@@ -19,4 +19,5 @@
 #import "UISegmentedControl+WCBlock.h"
 #import "UISlider+WCBlock.h"
 #import "UISwitch+WCBlock.h"
+#import "NSNotificationCenter+WCBlock.h"
 #endif /* WCBlock_h */
