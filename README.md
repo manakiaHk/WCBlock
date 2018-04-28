@@ -2,7 +2,9 @@
 a lightweight block library of UIKit extension
 
 # use as follow 
+##   you need import "WCBlock.h"
 
+#import "WCBlock.h"
 ```objective-c
     ///alear
     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
