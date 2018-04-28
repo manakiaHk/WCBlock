@@ -4,7 +4,7 @@
 //
 //  Created by zhao weicheng on 2018/4/24.
 //  Copyright © 2018年 weichengz. All rights reserved.
-//
+//github  https://github.com/manakiaHk/WCBlock
 
 #import "ViewController.h"
 #import "WCBlock.h"
@@ -88,7 +88,7 @@
  
     
     ///NSNotificationCenter
-    ///WCBlock 将自动为你管理移除observer对象
+    ///WCBlock 将自动为你管理移除消息中心的observer对象
     [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
         NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];

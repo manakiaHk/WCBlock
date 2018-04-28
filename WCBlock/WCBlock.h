@@ -4,7 +4,7 @@
 //
 //  Created by zhao weicheng on 2018/4/18.
 //  Copyright © 2018年 weichengz. All rights reserved.
-//   
+//github  https://github.com/manakiaHk/WCBlock
 //Welcome
 #ifndef WCBlock_h
 #define WCBlock_h
