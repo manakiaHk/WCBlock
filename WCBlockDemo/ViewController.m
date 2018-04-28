@@ -25,6 +25,12 @@
     }];
     [alearView show];
     
+    ////button
+    UIButton *button = [[UIButton alloc]init];
+    [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
+        NSLog(@"%@",sender);
+    }];
+    
     ///textfiled
     UITextField *textfiled = [[UITextField alloc]initWithFrame:CGRectMake(40, 40, 180, 35)];
     textfiled.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
