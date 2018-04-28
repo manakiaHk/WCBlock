@@ -58,7 +58,7 @@ a lightweight block library of UIKit extension
     }];
  
     ///NSNotificationCenter
-    ///WCBlock 将自动为你管理移除observer对象
+    ///WCBlock 将自动为你管理移除消息中心的observer对象
     [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
         NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
