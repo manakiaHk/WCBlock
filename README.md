@@ -1,5 +1,5 @@
 # WCBlock
-a lightweight block library of UIKit extension
+a lightweight block library of UIKit extension（一个用了会上瘾的block库）
 
 # use as follow 
 ##   you need import "WCBlock.h"
@@ -13,6 +13,12 @@ a lightweight block library of UIKit extension
         NSLog(@"clicked index: %ld",index);
     }];
     [alerView show];
+    
+     ////button
+    UIButton *button = [[UIButton alloc]init];
+    [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
+        NSLog(@"%@",sender);
+    }];
     
     ///textfiled
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
