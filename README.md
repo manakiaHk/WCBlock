@@ -1,5 +1,5 @@
 # WCBlock
-a lightweight block library of UIKit extension（一个用了会上瘾的block库）
+a lightweight block library of UIKit extension the library will  make your code more  simple , and you will love it for ever
 
 # use as follow 
 ##   you need import "WCBlock.h"
