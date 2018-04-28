@@ -54,16 +54,14 @@ a lightweight block library of UIKit extension , it will  make your code more  s
         NSLog(@"segment selected index %ld",selectedIndex);
     }];
    
-    ///slider
+    /// tip: 和以往一样，当wcblock 捕获了外部变量，可能将导致循环引用 ，你需要用 __weak 避免这样事情发生  
+    ///slider  
     UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
     __weak typeof(self) weakSelf = self;
     [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
         __strong typeof(weakSelf) self = weakSelf;
-        NSLog(@"slider value :%0.2f",value);
-        self.label.text = [NSString stringWithFormat:@"%0.02f",value];
-        self.label.backgroundColor = [UIColor greenColor];
-        self.label.alpha = 1-value;
-    }];
+       [weakSelf dosomething]
+    }];
  
     ///NSNotificationCenter
     ///WCBlock 将自动为你管理移除消息中心的observer对象
