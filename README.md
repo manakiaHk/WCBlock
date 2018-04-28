@@ -13,6 +13,12 @@ a lightweight block library of UIKit extension（一个用了会上瘾的block�
         NSLog(@"view clicked");
     }];
     
+     ///gestureRecognizer
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
+    [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
+        NSLog(@"gestureRecognizer sender--%@",sender);
+    }];
+    
      ////button
     UIButton *button = [[UIButton alloc]init];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
@@ -47,14 +53,7 @@ a lightweight block library of UIKit extension（一个用了会上瘾的block�
     [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
         NSLog(@"segment selected index %ld",selectedIndex);
     }];
-    
-    ///gestureRecognizer
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
-    [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        NSLog(@"gestureRecognizer sender--%@",sender);
-    }];
-    
-    
+   
     ///slider
     UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
     __weak typeof(self) weakSelf = self;
