@@ -20,7 +20,7 @@ a lightweight block library of UIKit extension the library will  make your code 
     }];
     
      ////button
-    UIButton *button = [[UIButton alloc]init];
+    UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
         NSLog(@"%@",sender);
     }];
