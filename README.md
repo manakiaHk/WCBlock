@@ -1,12 +1,31 @@
 # WCBlock
-a lightweight block library of UIKit extension
+a lightweight block library of UIKit extension（一个用了会上瘾的block库）
 
 # use as follow 
 ##   you need import "WCBlock.h"
 
 #import "WCBlock.h"
 ```objective-c
-    ///alear
+   
+     ///view
+    UIView *view = [[UIView alloc]initWithFrame:viewframe];
+    [view wc_bindViewClickedBlockNext:^(UIView *view) {
+        NSLog(@"view clicked");
+    }];
+    
+     ///gestureRecognizer
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
+    [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
+        NSLog(@"gestureRecognizer sender--%@",sender);
+    }];
+    
+     ////button
+    UIButton *button = [[UIButton alloc]init];
+    [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
+        NSLog(@"%@",sender);
+    }];
+    
+     ///alear
     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     
     [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
@@ -29,25 +48,12 @@ a lightweight block library of UIKit extension
          NSLog(@"textfiled did end editing");
     }];
    
-    ///view
-    UIView *view = [[UIView alloc]initWithFrame:viewframe];
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked");
-    }];
-    
     ///segmentedControl
     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
     [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
         NSLog(@"segment selected index %ld",selectedIndex);
     }];
-    
-    ///gestureRecognizer
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
-    [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        NSLog(@"gestureRecognizer sender--%@",sender);
-    }];
-    
-    
+   
     ///slider
     UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
     __weak typeof(self) weakSelf = self;
