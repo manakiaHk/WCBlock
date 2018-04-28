@@ -57,8 +57,18 @@ a lightweight block library of UIKit extension
         self.label.alpha = 1-value;
     }];
  
+    ///NSNotificationCenter
+    ///WCBlock 将自动为你管理移除消息中心的observer对象
+    [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
+        NSLog(@"%@",note.userInfo[@"note_demo"]);
+    }];
     
-    //KVO  
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"wc_noti_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
+        
+    });
+    
+    //KVO 
     [self.label wc_addObserverForKeyPath:@"text" valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
         NSLog(@"label.text = %@",newValue);
     }];
@@ -74,6 +84,39 @@ a lightweight block library of UIKit extension
     }];
     
     //And so on...
+    
+     ///你可以为每个对象绑定多个block ，每个block都会调用  但是记住 handerBlock 除外（只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以 WCBlock 是不允许的）比如：
+   
+    ///下面view的每个block 都将调用
+    [view wc_bindViewClickedBlockNext:^(UIView *view) {
+        NSLog(@"view clicked block0");
+    }];
+    [view wc_bindViewClickedBlockNext:^(UIView *view) {
+        NSLog(@"view clicked block1");
+    }];
+    [view wc_bindViewClickedBlockNext:^(UIView *view) {
+        NSLog(@"view clicked block2");
+    }];
+    
+    ///下面textfiled的handerBlock 只有最后一个有效
+    [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
+        if ([replacementString containsString:@"a"]) {
+            return NO;
+        }
+        return YES;
+    }];
+    [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
+        if ([replacementString containsString:@"b"]) {
+            return NO;
+        }
+        return YES;
+    }];
+    [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
+        if ([replacementString containsString:@"c"]) {
+            return NO;
+        }
+        return YES;
+    }];
     
 }
 - (void)dealloc {
