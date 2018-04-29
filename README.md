@@ -27,37 +27,38 @@ $ pod install
    
 view
 ```objective-c
-     ///下面view的每个block 都将调用 且返回值是同一个WCViewTap对象
-   WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+     ///下面view的每个block 都将调用，他们的返回值都是同一个对象
+   WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"0--view taped");
     }];
-    ///你可以通过返回值设置属性以及代理, 比如：
-    tap0.numberOfTapsRequired = 2;
-    tap0.delegate = self;
-    
-   WCViewTap *tap1 =  [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"1--view taped");
     }];
-   WCViewTap *tap2 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"2--view taped");
     }];
-   WCViewTap *tap3 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"3--view taped");
     }];
-   WCViewPan *pan0 =  [view wc_bindViewPanBlockNext:^(UIView *view, WCViewPan *pan) {
+    ///你可以通过返回值设置属性以及代理,比如：
+    tap0.numberOfTapsRequired = 2;
+    tap0.delegate = self;
+    
+    ///你还可以绑定其他的手势block回调。e.g:
+    [view wc_bindViewPanBlockNext:^(UIView *view, WCViewPan *pan) {
         NSLog(@"pan...");
     }];
-   WCViewLongPress *longPress0 = [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
+    [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
         NSLog(@"0--longPressed");
     }];
-    WCViewLongPress *longPress1 = [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
+    [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
         NSLog(@"1--longPressed");
     }];
-    
     [view wc_bindViewRotationBlockNext:^(UIView *view, WCViewRotation *rotation) {
         NSLog(@"%0.2f",rotation.rotation);//旋转角度
         NSLog(@"%0.2f",rotation.velocity);//旋转速度
     }];
+   
 ```
     
 gestureRecognizer
