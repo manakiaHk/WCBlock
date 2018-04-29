@@ -33,7 +33,7 @@ view
 ```objective-c
     
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
-        //..
+        // your code...
     }];
      
     [imageView wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
@@ -43,19 +43,20 @@ view
     
     ///你可以通过返回值设置属性以及代理 
     WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
-       //..
+       // your code...
     }];
     tap.numberOfTapsRequired = 2;
     tap.delegate = self;
     
     ///你还可以绑定其他的手势block回调。e.g:
     [view wc_bindViewPanBlockNext:^(UIView *view, WCViewPan *pan) {
-        //NSLog(@"pan...");
+        // your code...
     }];
     [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
-        //NSLog(@"longPressed");
+        // your code...
     }];
     [view wc_bindViewRotationBlockNext:^(UIView *view, WCViewRotation *rotation) {
+        // your code...
         //NSLog(@"%0.2f",rotation.rotation);//旋转角度
         //NSLog(@"%0.2f",rotation.velocity);//旋转速度
     }];
@@ -67,24 +68,24 @@ gestureRecognizer
 ```objective-c
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]init];
     [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        //...
+        // your code...
     }];
     
     UISwipeGestureRecognizer *swipeGesture =  [[UISwipeGestureRecognizer alloc]init];
     [swipeGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        //...
+        // your code...
     }];
     
     UIRotationGestureRecognizer *rotationGesture =  [[UIRotationGestureRecognizer alloc]init];
     [rotationGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        //...
+        // your code...
     }];
     
     UIPanGestureRecognizer *panGesture =  [[UIPanGestureRecognizer alloc]init];
     [panGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        //...
+        // your code...
     }];
-   // and so on ...
+   /// and so on ...
 ```
     
 button、segmentedControl、 slider  and so on.  e.g:
@@ -92,12 +93,12 @@ button、segmentedControl、 slider  and so on.  e.g:
 ```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
-        //button clicked...
+        // your code...
     }];
     
     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
     [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
-        //NSLog(@"segment selected index %ld",selectedIndex);
+        // your code...
     }];
     
     //tip: 和以往一样，当wcblock 捕获了外部变量，可能将导致循环引用 ，你需要用 __weak 避免这样事情发生  
@@ -111,7 +112,7 @@ button、segmentedControl、 slider  and so on.  e.g:
     
     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil      cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
-       //NSLog(@"clicked index: %ld",index);
+       // your code...
     }];
     [alerView show];
 ```
@@ -120,15 +121,19 @@ textfiled 、searchBar、textView
 ```objective-c
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
     [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
+         // your code... 
         //NSLog(@"textfiled text:%@",value);
     }];
     [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
+       // your code...
         return YES;
     }];
     [textfiled wc_bindTextFieldEditingDidBeginBlockNext:^(UITextField *textField) {
+       // your code...
        //textfiled did begin editing...
      }];
     [textfiled wc_bindTextFieldEditingDidEndBlockNext:^(UITextField *textField) {
+        // your code...
         //textfiled did end editing... 
     }];
     
@@ -156,12 +161,12 @@ textfiled 、searchBar、textView
         //your code...
     }];
     [textView wc_bindTextViewShouldChangeTextWithHandlerBlock:^BOOL(UITextView *textView, NSRange inRange, NSString *replacementText) {
-         //your code...
+        //your code...
         return YES;
     }];
     if (@available(iOS 10.0, *)) {
         [textView wc_bindTextViewShouldInteractWithUrlHandlerBlock:^BOOL(UITextView *textView, NSURL *url, NSRange inRange, UITextItemInteraction interaction) {
-             //your code...
+            //your code...
             return YES;
         }];
     };
@@ -174,18 +179,19 @@ textfiled 、searchBar、textView
   ```objective-c
   
     [WCNotificationCenter wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
+       // your code...
        //NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
     
      ///异步通知用
     [WCNotificationCenter wc_addObserverForName:kNoteName object:nil contextObj:self queue:[NSOperationQueue mainQueue] blockNext:^(NSNotification * _Nullable note) {
-        //..
+        // your code...
     }];
     
     ///notification test demo
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [WCNotificationCenter postNotificationName:@"wc_noti_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
-        //..
+        // your code...
     });
     
 ```
@@ -225,6 +231,7 @@ textfiled 、searchBar、textView
 ```objective-c
 
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+       // your code...
        // NSLog(@"0--view taped");
     }];
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
