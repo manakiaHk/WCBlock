@@ -164,7 +164,7 @@ textfiled
     [self.label wc_removeObserverForKeyPaths:@[@"alpha",@"text"]];
 }
  ```    
- tip:你可以为每个对象绑定多个同样类型的block ，每个block都会调用 ,因为不排除你会在多个地方同时使用，所以你要知道WCBlock是可以做到这点的。 但是记住 handerBlock 除外，它只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以对于handerBlock WCBlock 是不允许的。e.g：
+ tip:你可以为每个对象绑定多个同样类型的block ，每个block都会调用 ,因为不排除你会在多个地方同时使用，所以你要知道WCBlock是可以做到这点的。 但是记住 handerBlock 除外，它只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以对于handerBlock 绑定多个同样类型的block WCBlock 是不允许的，这时候只有最后一个有效。e.g：
    
 像下面的每个block都将调用
 ```objective-c
