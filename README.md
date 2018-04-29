@@ -1,6 +1,6 @@
 ## WCBlock
 
- * A lightweight block library of UIKit extension , t will  make your code simple .
+ * A lightweight block library of UIKit extension , It make your code simple .
   
 ## How To Get Started
 
