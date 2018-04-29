@@ -151,23 +151,19 @@ textfiled
  KVO 
  
   ```objective-c 
-  
-    [_anObject wc_addObserverForKeyPath:@"keypath0" valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
+    [_anObject wc_addObserverForKeyPath:@"keypath0" valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
         //your code...
     }];
-    [_anObject wc_addObserverForKeyPaths:@[@"keypath1",@"keypath2"] valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
+    [_anObject wc_addObserverForKeyPaths:@[@"keypath1",@"keypath2"] valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
         if ([keypath isEqualToString:@"keypath1"]) {
-             //your code...
+            //your code...
         }else if([keypath isEqualToString:@"keypath2"]){
             //your code...
         }else;
     }];
-    
-     [_anObject wc_addObserverForKeyPath:@"keypath3" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld changeBlockNext:^(NSString *keypath, id ofObj, NSDictionary<NSKeyValueChangeKey,id> *change) {
+    [_anObject wc_addObserverForKeyPath:@"keypath3" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld changeBlockNext:^(NSString *keypath, id ofObj, NSDictionary<NSKeyValueChangeKey,id> *change) {
         //your code...
     }];
-    
-    
    ```
   和Apple api 一样 对于KVO 你需要自己移除键值观察，  像这样
   
