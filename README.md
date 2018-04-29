@@ -40,7 +40,7 @@ view
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"3--view taped");
     }];
-    ///你可以通过返回值设置属性以及代理,比如：
+    ///你可以通过返回值设置属性以及代理 这点和Apple的api完全一样 ,比如：
     tap0.numberOfTapsRequired = 2;
     tap0.delegate = self;
     
