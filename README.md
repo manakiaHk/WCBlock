@@ -29,15 +29,15 @@ view
 ```objective-c
     UIView *view = [[UIView alloc]initWithFrame:viewframe];
     [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked");
-    }];
+        //...
+     }];
 ```
     
 gestureRecognizer
 ```objective-c
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]init];
     [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
-        NSLog(@"gestureRecognizer sender--%@",sender);
+        //...
     }];
     
     UISwipeGestureRecognizer *swipeGesture =  [[UISwipeGestureRecognizer alloc]init];
@@ -61,8 +61,8 @@ button
 ```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
-        NSLog(@"%@",sender);
-    }];
+        //button clicked...
+    }];
 ```
     
 alear
@@ -84,10 +84,10 @@ textfiled
         return YES;
     }];
     [textfiled wc_bindTextFieldEditingDidBeginBlockNext:^(UITextField *textField) {
-        NSLog(@"textfiled did begin editing");
-    }];
+       //textfiled did begin editing...
+     }];
     [textfiled wc_bindTextFieldEditingDidEndBlockNext:^(UITextField *textField) {
-         NSLog(@"textfiled did end editing");
+        //textfiled did end editing... 
     }];
 ``` 
 segmentedControl
