@@ -28,7 +28,7 @@ $ pod install
 view
 ```objective-c
      ///下面view的每个block 都将调用，他们的返回值都是同一个对象
-   WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+    WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"0--view taped");
     }];
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
@@ -84,12 +84,12 @@ gestureRecognizer
     
 button、segmentedControl、 slider  and so on ...  e.g:
 ```objective-c
-    UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
+    UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
         //button clicked...
     }];
     
-     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
+    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
     [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
         NSLog(@"segment selected index %ld",selectedIndex);
     }];
@@ -103,7 +103,7 @@ button、segmentedControl、 slider  and so on ...  e.g:
        [self sendAMesseage]
     }];
     
-     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil    cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
+    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil    cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
         NSLog(@"clicked index: %ld",index);
     }];
