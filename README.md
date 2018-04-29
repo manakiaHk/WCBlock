@@ -84,11 +84,25 @@ gestureRecognizer
    // and so on ...
 ```
     
-button
+button、segmentedControl、 slider  and so on ...  e.g:
 ```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
         //button clicked...
+    }];
+    
+     UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
+    [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
+        NSLog(@"segment selected index %ld",selectedIndex);
+    }];
+    
+    //tip: 和以往一样，当wcblock 捕获了外部变量，可能将导致循环引用 ，你需要用 __weak 避免这样事情发生  
+    
+    UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
+    __weak typeof(self) weakSelf = self;
+    [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
+        __strong typeof(weakSelf) self = weakSelf;
+       [self sendAMesseage]
     }];
 ```
     
@@ -117,23 +131,7 @@ textfiled
         //textfiled did end editing... 
     }];
 ``` 
-segmentedControl
-```objective-c
-    UISegmentedControl *segment = [[UISegmentedControl alloc]initWithItems:@[@"title0",@"title1",@"title2"]];
-    [segment wc_bindSegmentControlValueChangedBlockNext:^(NSInteger selectedIndex) {
-        NSLog(@"segment selected index %ld",selectedIndex);
-    }];
-```
- tip: 和以往一样，当wcblock 捕获了外部变量，可能将导致循环引用 ，你需要用 __weak 避免这样事情发生  
- slider  
-```objective-c
-    UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
-    __weak typeof(self) weakSelf = self;
-    [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
-        __strong typeof(weakSelf) self = weakSelf;
-       [self sendAMesseage]
-    }];
-```
+
   notificationCenter ,WCBlock 将自动为你管理移除消息中心的observer对象 
   
   ```objective-c
