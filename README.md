@@ -49,10 +49,7 @@ view
         NSLog(@"pan...");
     }];
     [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
-        NSLog(@"0--longPressed");
-    }];
-    [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
-        NSLog(@"1--longPressed");
+        NSLog(@"longPressed");
     }];
     [view wc_bindViewRotationBlockNext:^(UIView *view, WCViewRotation *rotation) {
         NSLog(@"%0.2f",rotation.rotation);//旋转角度
