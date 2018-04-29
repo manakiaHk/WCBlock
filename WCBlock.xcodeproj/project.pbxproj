@@ -26,6 +26,7 @@
 		35CAFD942094000700163DED /* UIView+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFD8A2094000600163DED /* UIView+WCBlock.m */; };
 		35CAFD952094000700163DED /* NSObject+WCKVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFD8B2094000700163DED /* NSObject+WCKVOBlock.m */; };
 		35CAFD982094003400163DED /* NSNotificationCenter+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFD972094003400163DED /* NSNotificationCenter+WCBlock.m */; };
+		35CAFDA820957D9E00163DED /* WCViewGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFDA720957D9E00163DED /* WCViewGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		35CAFD8B2094000700163DED /* NSObject+WCKVOBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WCKVOBlock.m"; sourceTree = "<group>"; };
 		35CAFD962094003400163DED /* NSNotificationCenter+WCBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+WCBlock.h"; sourceTree = "<group>"; };
 		35CAFD972094003400163DED /* NSNotificationCenter+WCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+WCBlock.m"; sourceTree = "<group>"; };
+		35CAFDA620957D9E00163DED /* WCViewGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCViewGesture.h; sourceTree = "<group>"; };
+		35CAFDA720957D9E00163DED /* WCViewGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCViewGesture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,8 @@
 				35CAFD862094000600163DED /* UIView+WCBlock.h */,
 				35CAFD8A2094000600163DED /* UIView+WCBlock.m */,
 				35CAFD7E2094000500163DED /* WCBlock.h */,
+				35CAFDA620957D9E00163DED /* WCViewGesture.h */,
+				35CAFDA720957D9E00163DED /* WCViewGesture.m */,
 			);
 			path = WCBlock;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				35CAFD8F2094000700163DED /* UISlider+WCBlock.m in Sources */,
 				35CAFD8E2094000700163DED /* UITextView+WCBlock.m in Sources */,
 				35CAFD902094000700163DED /* UITextField+WCBlock.m in Sources */,
+				35CAFDA820957D9E00163DED /* WCViewGesture.m in Sources */,
 				35CAFD952094000700163DED /* NSObject+WCKVOBlock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

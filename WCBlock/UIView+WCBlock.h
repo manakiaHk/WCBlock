@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WCViewGesture.h"
 @interface UIView (WCBlock)
-/**@!brief EN: bind view object clicked call back . zh-CN:绑定view点击回调
- * @param block  call back.  zh-CN :回调
- */
--(void)wc_bindViewClickedBlockNext:(void (^)(UIView *view))block;
+///轻拍
+-(WCViewTap*)wc_bindViewTapBlockNext:(void (^)(UIView *view,WCViewTap *tap))block;
+///轻扫
+-(WCViewSwipe*)wc_bindViewSwipeBlockNext:(void (^)(UIView *view,WCViewSwipe *swipe))block;
+///长按
+-(WCViewLongPress*)wc_bindViewLongPressBlockNext:(void (^)(UIView *view,WCViewLongPress *longPress))block;
+///平移
+-(WCViewPan*)wc_bindViewPanBlockNext:(void (^)(UIView *view,WCViewPan *pan))block;
+///捏合（缩放）
+-(WCViewPinch*)wc_bindViewPinchBlockNext:(void (^)(UIView *view,WCViewPinch *pinch))block;
+///旋转
+-(WCViewRotation*)wc_bindViewRotationBlockNext:(void (^)(UIView *view,WCViewRotation *rotation))block ;
+///屏幕边缘平移
+-(WCViewScreenEdgePan*)wc_bindViewScreenEdgePanBlockNext:(void (^)(UIView *view,WCViewScreenEdgePan *screenEdgePan))block;
 @end
