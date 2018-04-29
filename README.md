@@ -1,6 +1,6 @@
 ## WCBlock
 
-  * a lightweight block library of UIKit extension , it will  make your code simple .
+ * A lightweight block library of UIKit extension , t will  make your code simple .
   
 ## How To Get Started
 
@@ -100,7 +100,7 @@ button、segmentedControl、 slider  and so on.  e.g:
     __weak typeof(self) weakSelf = self;
     [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
         __strong typeof(weakSelf) self = weakSelf;
-       [self sendAMesseage]
+       [self sendAMesseage];
     }];
     
     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil      cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
@@ -162,6 +162,7 @@ textfiled
             //your code...
         }else;
     }];
+    
      [_anObject wc_addObserverForKeyPath:@"keypath3" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld changeBlockNext:^(NSString *keypath, id ofObj, NSDictionary<NSKeyValueChangeKey,id> *change) {
         //your code...
     }];
@@ -174,7 +175,7 @@ textfiled
   
    - (void)dealloc {
     [_anObject wc_removeObserverForKeyPath:@"keypath0"];
-    [self.label wc_removeObserverForKeyPath:@"keypath1"];
+    [_anObject wc_removeObserverForKeyPath:@"keypath1"];
     //also 
     [_anObject wc_removeObserverForKeyPaths:@[@"keypath2",@"keypath3"]];
 }
