@@ -91,7 +91,7 @@ segmentedControl
        [self sendAMesseage]
     }];
 ```
-  NSNotificationCenter ,WCBlock 将自动为你管理移除消息中心的observer对象 
+  notificationCenter ,WCBlock 将自动为你管理移除消息中心的observer对象 
   
   ```objective-c
     [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
@@ -118,7 +118,7 @@ segmentedControl
         ///..
     }];
    ```
-  和apple api 一样 对于KVO 你需要自己移除  像这样
+  和Apple api 一样 对于KVO 你需要自己移除键值观察，  像这样
   ```objective-c
    - (void)dealloc {
     [self.label wc_removeObserverForKeyPath:@"text"];
@@ -163,4 +163,6 @@ segmentedControl
     }];
     
    ```
+   
+   ## end
     
