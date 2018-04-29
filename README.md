@@ -1,5 +1,5 @@
 ## WCBlock
-  *a lightweight block library of UIKit extension , it will  make your code simple .
+  * a lightweight block library of UIKit extension , it will  make your code simple .
 ## How To Get Started
 
 ## Manual import
@@ -139,7 +139,8 @@ textfiled
 ```
  KVO 
  
-  ```objective-c  
+  ```objective-c 
+  
     [_anObject wc_addObserverForKeyPath:@"keypath0" valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
         //your code...
     }];
@@ -157,6 +158,7 @@ textfiled
   和Apple api 一样 对于KVO 你需要自己移除键值观察，  像这样
   
   ```objective-c
+  
    - (void)dealloc {
     [_anObject wc_removeObserverForKeyPath:@"keypath0"];
     [self.label wc_removeObserverForKeyPath:@"keypath1"];
@@ -187,10 +189,12 @@ textfiled
     [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
         // NSLog(@"2--textfiled text:%@",value);
     }];
+    
 ```
 像下面的 handlerBlock 只有最后一个有效（请注意，它们是 handlerBlock)
 
 ```objective-c
+
     [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
         if ([replacementString containsString:@"a"]) {
             return NO;
