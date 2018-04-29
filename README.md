@@ -31,7 +31,7 @@ view
    WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"0--view taped");
     }];
-    ///你可以通过返回值设置手势属性和代理, 比如：
+    ///你可以通过返回值设置属性以及代理, 比如：
     tap0.numberOfTapsRequired = 2;
     tap0.delegate = self;
     
