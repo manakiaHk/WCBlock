@@ -35,6 +35,12 @@ view
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         //..
     }];
+     
+    [imageView wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        // your code...
+    }];
+    imageView.userInteractionEnabled = YES;//对于imageView 的userInteractionEnabled 属性保留apple api的做法,你需要主动设置为YES
+    
     ///你可以通过返回值设置属性以及代理 
     WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
        //..
