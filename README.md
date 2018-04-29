@@ -119,8 +119,15 @@ segmentedControl
         ///..
     }];
    ```
-  And so on...
-    
+  和apple api 一样 对于KVO 你需要自己移除  像这样
+  ```objective-c
+   - (void)dealloc {
+    [self.label wc_removeObserverForKeyPath:@"text"];
+    [self.label wc_removeObserverForKeyPath:@"alpha"];
+    //also 
+    [self.label wc_removeObserverForKeyPaths:@[@"alpha",@"text"]];
+}
+ ```    
  tip:你可以为每个对象绑定多个block ，每个block都会调用  但是记住 handerBlock 除外（只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以 WCBlock 是不允许的）比如：
    
 下面view的每个block 都将调用
@@ -158,11 +165,3 @@ segmentedControl
     
    ```
     
-}
-- (void)dealloc {
-    [self.label wc_removeObserverForKeyPath:@"text"];
-    [self.label wc_removeObserverForKeyPath:@"alpha"];
-//    [self.label wc_removeObserverForKeyPaths:@[@"alpha",@"text"]];
-}
-
-```
