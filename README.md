@@ -162,9 +162,9 @@ textfiled
     [self.label wc_removeObserverForKeyPaths:@[@"alpha",@"text"]];
 }
  ```    
- tip:你可以为每个对象绑定多个block ，每个block都会调用  但是记住 handerBlock 除外（只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以 WCBlock 是不允许的）比如：
-   
-下面view的每个block 都将调用
+ tip:你可以为每个对象绑定多个同样类型的block ，每个block都会调用 ,因为不排除你会在多个地方同时使用，所以你要知道WCBlock是可以做到这点的。 但是记住 handerBlock 除外，它只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以对于handerBlock WCBlock 是不允许的。e.g：
+   
+像下面的每个block都将调用
 ```objective-c
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"0--view taped");
@@ -186,8 +186,8 @@ textfiled
         NSLog(@"2--textfiled text:%@",value);
     }];
 ```
-下面textfiled的handerBlock 只有最后一个有效
-   ```objective-c
+像下面的 block 只有最后一个有效（请注意，它们是 HandlerBlock)
+```objective-c
     [textfiled wc_bindTextFieldShouldChangeCharactersHandlerBlock:^BOOL(UITextField *textField, NSRange shouldChangeCharactersInRange, NSString *replacementString) {
         if ([replacementString containsString:@"a"]) {
             return NO;
