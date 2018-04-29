@@ -115,7 +115,7 @@ button、segmentedControl、 slider  and so on.  e.g:
     }];
     [alerView show];
 ```
-textfiled
+textfiled 、searchBar、textView
 
 ```objective-c
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
@@ -131,6 +131,41 @@ textfiled
     [textfiled wc_bindTextFieldEditingDidEndBlockNext:^(UITextField *textField) {
         //textfiled did end editing... 
     }];
+    
+     UISearchBar *searchBar = [[UISearchBar alloc]init];
+    [searchBar wc_bindSearchBarTextDidBeginEditingBlockNext:^(UISearchBar *searchBar) {
+        // your code...
+    }];
+    [searchBar wc_bindSearchBarTextDidChangeBlockNext:^(UISearchBar *searchBar, NSString *searchText) {
+        // your code...
+    }];
+    [searchBar wc_bindSearchBarTextDidEndEditingBlockNext:^(UISearchBar *searchBar) {
+        // your code...
+    }];
+    [searchBar wc_bindSearchBarCancelButtonClickedBlockNext:^(UISearchBar *searchBar) {
+        // your code...
+    }];
+    [searchBar wc_bindSearchBarShouldChangeCharactersHandlerBlock:^BOOL(UISearchBar *searchBar, NSRange inRange, NSString *replacementString) {
+        //your code...
+        return YES;
+    }];
+    /// and so on ...
+    
+    UITextView *textView = [[UITextView alloc]init];
+    [textView wc_bindTextViewEditingChangedBlockNext:^(UITextView *textView, NSString *value) {
+        //your code...
+    }];
+    [textView wc_bindTextViewShouldChangeTextWithHandlerBlock:^BOOL(UITextView *textView, NSRange inRange, NSString *replacementText) {
+         //your code...
+        return YES;
+    }];
+    if (@available(iOS 10.0, *)) {
+        [textView wc_bindTextViewShouldInteractWithUrlHandlerBlock:^BOOL(UITextView *textView, NSURL *url, NSRange inRange, UITextItemInteraction interaction) {
+             //your code...
+            return YES;
+        }];
+    };
+    /// and so on ...
     
 ``` 
 
