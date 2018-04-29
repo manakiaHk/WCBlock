@@ -1,10 +1,12 @@
-# WCBlock
-a lightweight block library of UIKit extension , it will  make your code more  simple , and you will love it for ever
+## WCBlock
+ * a lightweight block library of UIKit extension , it will  make your code more  simple , and you will love it for ever
 
-# use as follow 
-##   you need import "WCBlock.h"
+## How To Get Started
 
-#import "WCBlock.h"
+## Manual import
+    * Drag the folder "WCBlock"  to your project
+    * Import the main file：`#import "WCBlock.h"`
+## Installation with CocoaPods
 
 ```ruby
 source 'https://github.com/manakiaHk/WCBlock.git'
@@ -20,7 +22,7 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
-
+## Usage
 ```objective-c
    
      ///view
