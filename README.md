@@ -27,10 +27,37 @@ $ pod install
    
 view
 ```objective-c
-    UIView *view = [[UIView alloc]initWithFrame:viewframe];
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        //...
-     }];
+     ///下面view的每个block 都将调用 且返回值是同一个WCViewTap对象
+   WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"0--view taped");
+    }];
+    ///你可以通过返回值设置手势属性和代理, 比如：
+    tap0.numberOfTapsRequired = 2;
+    tap0.delegate = self;
+    
+   WCViewTap *tap1 =  [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"1--view taped");
+    }];
+   WCViewTap *tap2 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"2--view taped");
+    }];
+   WCViewTap *tap3 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"3--view taped");
+    }];
+   WCViewPan *pan0 =  [view wc_bindViewPanBlockNext:^(UIView *view, WCViewPan *pan) {
+        NSLog(@"pan...");
+    }];
+   WCViewLongPress *longPress0 = [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
+        NSLog(@"0--longPressed");
+    }];
+    WCViewLongPress *longPress1 = [view wc_bindViewLongPressBlockNext:^(UIView *view, WCViewLongPress *longPress) {
+        NSLog(@"1--longPressed");
+    }];
+    
+    [view wc_bindViewRotationBlockNext:^(UIView *view, WCViewRotation *rotation) {
+        NSLog(@"%0.2f",rotation.rotation);//旋转角度
+        NSLog(@"%0.2f",rotation.velocity);//旋转速度
+    }];
 ```
     
 gestureRecognizer
@@ -147,14 +174,24 @@ segmentedControl
    
 下面view的每个block 都将调用
 ```objective-c
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked block0");
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"0--view taped");
     }];
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked block1");
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"1--view taped");
     }];
-    [view wc_bindViewClickedBlockNext:^(UIView *view) {
-        NSLog(@"view clicked block2");
+    [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+        NSLog(@"2--view taped");
+    }];
+    
+    [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
+        NSLog(@"0--textfiled text:%@",value);
+    }];
+    [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
+        NSLog(@"1--textfiled text:%@",value);
+    }];
+    [textfiled wc_bindTextFieldEditingChangedBlockNext:^(UITextField *textField, NSString *value) {
+        NSLog(@"2--textfiled text:%@",value);
     }];
 ```
 下面textfiled的handerBlock 只有最后一个有效
