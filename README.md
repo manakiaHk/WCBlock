@@ -104,17 +104,13 @@ button、segmentedControl、 slider  and so on ...  e.g:
         __strong typeof(weakSelf) self = weakSelf;
        [self sendAMesseage]
     }];
-```
     
-alear
-```objective-c
-    UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
-    
+     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil    cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
     [alerView wc_bindAlertButtonClickedBlockNext:^(NSInteger index) {
         NSLog(@"clicked index: %ld",index);
     }];
     [alerView show];
-```  
+```
 textfiled
 ```objective-c
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
