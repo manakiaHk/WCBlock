@@ -170,10 +170,10 @@ textfiled
   ```objective-c
   
    - (void)dealloc {
-    [_anObject wc_removeObserverForKeyPath:@"keypath0"];
-    [_anObject wc_removeObserverForKeyPath:@"keypath1"];
-    //also 
-    [_anObject wc_removeObserverForKeyPaths:@[@"keypath2",@"keypath3"]];
+     [_anObject wc_removeObserverForKeyPath:@"keypath0"];
+     [_anObject wc_removeObserverForKeyPath:@"keypath1"];
+     //also 
+     [_anObject wc_removeObserverForKeyPaths:@[@"keypath2",@"keypath3"]];
 }
 
  ```    
