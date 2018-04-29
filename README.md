@@ -88,16 +88,15 @@ segmentedControl
     __weak typeof(self) weakSelf = self;
     [slider wc_bindSliderValueChangedBlockNext:^(CGFloat value) {
         __strong typeof(weakSelf) self = weakSelf;
-       [weakSelf dosomething]
+       [self sendAMesseage]
     }];
 ```
- 
   NSNotificationCenter ,WCBlock 将自动为你管理移除消息中心的observer对象 
+  
   ```objective-c
     [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
         NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"wc_noti_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
         
