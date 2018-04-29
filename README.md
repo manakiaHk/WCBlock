@@ -27,7 +27,7 @@ $ pod install
    
 view
 ```objective-c
-     ///下面view的每个block 都将调用，他们的返回值都是同一个对象
+     ///下面view的每个block 都将调用，他们的返回值都是同一个对象，因为你知道 ，每一个view只能同时绑定一个同样类型的手势.
     WCViewTap *tap0 = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         NSLog(@"0--view taped");
     }];
@@ -132,6 +132,8 @@ textfiled
     [[NSNotificationCenter defaultCenter] wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
         NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
+    
+    ///notification test demo
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"wc_noti_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
         
@@ -207,7 +209,8 @@ textfiled
         return YES;
     }];
     
-   ```
+```
    
-  ## end
+ ## thanks for viewing.
+ ## Regards
     

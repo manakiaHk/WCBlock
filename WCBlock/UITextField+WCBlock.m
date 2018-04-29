@@ -64,7 +64,7 @@ static const int  wc_textField_shouldClearHandlerBlock_key;
     [[self wc_blockTargetSet] addObject:target];
     [self addTarget:target action:@selector(wc_textEditingDidEndOnExit:) forControlEvents:UIControlEventEditingDidEndOnExit];
 }
-- (void)wc_bindTextFieldShouldChangeCharactersHandlerBlock:(BOOL (^)(UITextField*textField,NSRange shouldChangeCharactersInRange ,NSString*replacementString))block {
+- (void)wc_bindTextFieldShouldChangeCharactersHandlerBlock:(BOOL (^)(UITextField*textField,NSRange inRange ,NSString*replacementString))block {
     objc_setAssociatedObject(self,&wc_textField_shouldChangeCharactersHandlerBlock_key,block, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.delegate = self;
 }

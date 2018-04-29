@@ -19,5 +19,6 @@
 #import "UISegmentedControl+WCBlock.h"
 #import "UISlider+WCBlock.h"
 #import "UISwitch+WCBlock.h"
+#import "UISearchBar+WCBlock.h"
 #import "NSNotificationCenter+WCBlock.h"
 #endif /* WCBlock_h */

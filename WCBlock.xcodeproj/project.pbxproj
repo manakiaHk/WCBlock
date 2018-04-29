@@ -27,6 +27,7 @@
 		35CAFD952094000700163DED /* NSObject+WCKVOBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFD8B2094000700163DED /* NSObject+WCKVOBlock.m */; };
 		35CAFD982094003400163DED /* NSNotificationCenter+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFD972094003400163DED /* NSNotificationCenter+WCBlock.m */; };
 		35CAFDA820957D9E00163DED /* WCViewGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFDA720957D9E00163DED /* WCViewGesture.m */; };
+		35CAFDAB2095AC2600163DED /* UISearchBar+WCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CAFDAA2095AC2600163DED /* UISearchBar+WCBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		35CAFD972094003400163DED /* NSNotificationCenter+WCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+WCBlock.m"; sourceTree = "<group>"; };
 		35CAFDA620957D9E00163DED /* WCViewGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCViewGesture.h; sourceTree = "<group>"; };
 		35CAFDA720957D9E00163DED /* WCViewGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCViewGesture.m; sourceTree = "<group>"; };
+		35CAFDA92095AC2600163DED /* UISearchBar+WCBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+WCBlock.h"; sourceTree = "<group>"; };
+		35CAFDAA2095AC2600163DED /* UISearchBar+WCBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+WCBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +176,11 @@
 		35CAF9D2208F420A00163DED /* WCBlock */ = {
 			isa = PBXGroup;
 			children = (
+				35CAFD7E2094000500163DED /* WCBlock.h */,
 				35CAFD962094003400163DED /* NSNotificationCenter+WCBlock.h */,
 				35CAFD972094003400163DED /* NSNotificationCenter+WCBlock.m */,
+				35CAFD862094000600163DED /* UIView+WCBlock.h */,
+				35CAFD8A2094000600163DED /* UIView+WCBlock.m */,
 				35CAFD842094000600163DED /* UIAlertView+WCBlock.h */,
 				35CAFD892094000600163DED /* UIAlertView+WCBlock.m */,
 				35CAFD812094000600163DED /* UIControl+WCBlock.h */,
@@ -193,9 +199,8 @@
 				35CAFD832094000600163DED /* UITextField+WCBlock.m */,
 				35CAFD782094000500163DED /* UITextView+WCBlock.h */,
 				35CAFD802094000600163DED /* UITextView+WCBlock.m */,
-				35CAFD862094000600163DED /* UIView+WCBlock.h */,
-				35CAFD8A2094000600163DED /* UIView+WCBlock.m */,
-				35CAFD7E2094000500163DED /* WCBlock.h */,
+				35CAFDA92095AC2600163DED /* UISearchBar+WCBlock.h */,
+				35CAFDAA2095AC2600163DED /* UISearchBar+WCBlock.m */,
 				35CAFDA620957D9E00163DED /* WCViewGesture.h */,
 				35CAFDA720957D9E00163DED /* WCViewGesture.m */,
 			);
@@ -344,6 +349,7 @@
 				35CAFD8C2094000700163DED /* UIControl+WCBlock.m in Sources */,
 				35CAF9B0208F410800163DED /* main.m in Sources */,
 				35CAFD922094000700163DED /* UISwitch+WCBlock.m in Sources */,
+				35CAFDAB2095AC2600163DED /* UISearchBar+WCBlock.m in Sources */,
 				35CAF9A2208F410800163DED /* AppDelegate.m in Sources */,
 				35CAFD8F2094000700163DED /* UISlider+WCBlock.m in Sources */,
 				35CAFD8E2094000700163DED /* UITextView+WCBlock.m in Sources */,

@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-//@interface WCViewGesture : NSObject
-//@end
 @interface WCViewTap:UITapGestureRecognizer
 @end
 @interface WCViewSwipe:UISwipeGestureRecognizer

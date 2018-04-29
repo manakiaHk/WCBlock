@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define WCNotificationCenter [NSNotificationCenter defaultCenter]
+
 @interface NSNotificationCenter (WCBlock)
 /**@!brief 通知中心添加监听者(内部自动管理移除observer)
  * @param name 通知名

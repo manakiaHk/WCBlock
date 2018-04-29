@@ -7,9 +7,6 @@
 //
 
 #import "WCViewGesture.h"
-
-//@implementation WCViewGesture
-//@end
 @implementation WCViewTap
 @end
 @implementation WCViewSwipe
