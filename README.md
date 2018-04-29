@@ -23,25 +23,31 @@ Then, run the following command:
 $ pod install
 ```
 ## Usage
-```objective-c
+
    
-     ///view
+     view
+```objective-c
     UIView *view = [[UIView alloc]initWithFrame:viewframe];
     [view wc_bindViewClickedBlockNext:^(UIView *view) {
         NSLog(@"view clicked");
     }];
+```
     
-     ///gestureRecognizer
+    gestureRecognizer
+```objective-c
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
     [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         NSLog(@"gestureRecognizer sender--%@",sender);
     }];
+```
     
-     ////button
+    button
+```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
         NSLog(@"%@",sender);
     }];
+```
     
      ///alear
     UIAlertView *alerView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"cancle" otherButtonTitles:@"ok", nil];
