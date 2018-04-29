@@ -31,9 +31,6 @@ view
     [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         //..
     }];
-    WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
-       //..
-    }];
     ///你可以通过返回值设置属性以及代理 
     WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
        //..
