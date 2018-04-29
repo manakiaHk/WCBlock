@@ -35,9 +35,24 @@ view
     
 gestureRecognizer
 ```objective-c
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]init];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]init];
     [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         NSLog(@"gestureRecognizer sender--%@",sender);
+    }];
+    
+    UISwipeGestureRecognizer *swipeGesture =  [[UISwipeGestureRecognizer alloc]init];
+    [swipeGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
+        //...
+    }];
+    
+    UIRotationGestureRecognizer *rotationGesture =  [[UIRotationGestureRecognizer alloc]init];
+    [rotationGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
+        //...
+    }];
+    
+    UIPanGestureRecognizer *panGesture =  [[UIPanGestureRecognizer alloc]init];
+    [panGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
+        //...
     }];
 ```
     
