@@ -54,6 +54,7 @@ gestureRecognizer
     [panGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         //...
     }];
+   // and so on ...
 ```
     
 button
