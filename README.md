@@ -82,7 +82,7 @@ gestureRecognizer
    // and so on ...
 ```
     
-button、segmentedControl、 slider  and so on ...  e.g:
+button、segmentedControl、 slider  and so on   e.g:
 ```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
     [button wc_bindForControlEvents:UIControlEventTouchUpInside blockNext:^(id sender) {
