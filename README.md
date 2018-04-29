@@ -5,6 +5,22 @@ a lightweight block library of UIKit extension , it will  make your code more  s
 ##   you need import "WCBlock.h"
 
 #import "WCBlock.h"
+
+```ruby
+source 'https://github.com/manakiaHk/WCBlock.git'
+platform :ios, '7.0'
+
+target 'TargetName' do
+pod 'WCBlock'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 ```objective-c
    
      ///view
