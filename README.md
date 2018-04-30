@@ -191,13 +191,13 @@ textfiled 、searchBar、textView
     }];
     
      ///异步通知用
-    [WCNotificationCenter wc_addObserverForName:kNoteName object:nil contextObj:self queue:[NSOperationQueue mainQueue] blockNext:^(NSNotification * _Nullable note) {
+    [WCNotificationCenter wc_addObserverForName:@"wc_note_demo" object:nil contextObj:self queue:[NSOperationQueue mainQueue] blockNext:^(NSNotification * _Nullable note) {
         // your code...
     }];
     
     ///notification test demo
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [WCNotificationCenter postNotificationName:@"wc_noti_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
+        [WCNotificationCenter postNotificationName:@"wc_note_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
         // your code...
     });
     
