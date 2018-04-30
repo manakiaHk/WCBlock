@@ -69,7 +69,7 @@ Bind block callback for view
    
 ```
     
-gestureRecognizer
+Bind block callback for gestureRecognizer
 
 ```objective-c
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]init];
