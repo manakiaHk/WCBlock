@@ -1,7 +1,6 @@
 ## WCBlock
 
- * A lightweight block library of UIKit extension , It make your code simple .
- WCBlock是一个无侵入性的轻量级block库，它为NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField等的事件响应提供了很友好的block回调支持。提高代码的聚合度,使编码更加轻松,提高开发效率。
+ * A lightweight block library of UIKit extension , It is non-invasive and make your code simple and easy . It provides friendly block callback support for event response  for NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField and so on . As a result, it  improve the cohesion degree of  code, make coding easier and improve development efficiency for you.
 ## How To Get Started
 
 ## Manual import
@@ -35,7 +34,7 @@ Import the main file：
 ## Usage
 
    
-view
+Bind block callback for view 
 
 ```objective-c
     
@@ -46,16 +45,16 @@ view
     [imageView wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
         // your code...
     }];
-    imageView.userInteractionEnabled = YES;//对于imageView 的userInteractionEnabled 属性保留apple api的做法,你需要主动设置为YES
-    
-    ///你可以通过返回值设置属性以及代理 
-    WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
+    imageView.userInteractionEnabled = YES;//for imageView, the proprty userInteractionEnabled defualt value is NO,this is same as Apple API.
+    
+    ///You can set it's properties and delegate through the return value.
+    WCViewTap *tap = [view wc_bindViewTapBlockNext:^(UIView *view, WCViewTap *tap) {
        // your code...
     }];
     tap.numberOfTapsRequired = 2;
     tap.delegate = self;
     
-    ///你还可以绑定其他的手势block回调。e.g:
+    ///You can also bind other gestures block callback,e.g:
     [view wc_bindViewPanBlockNext:^(UIView *view, WCViewPan *pan) {
         // your code...
     }];
@@ -77,25 +76,22 @@ gestureRecognizer
     [tapGes wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         // your code...
     }];
-    
     UISwipeGestureRecognizer *swipeGesture =  [[UISwipeGestureRecognizer alloc]init];
     [swipeGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         // your code...
     }];
-    
     UIRotationGestureRecognizer *rotationGesture =  [[UIRotationGestureRecognizer alloc]init];
     [rotationGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         // your code...
     }];
-    
     UIPanGestureRecognizer *panGesture =  [[UIPanGestureRecognizer alloc]init];
     [panGesture wc_bindGestureBlockNext:^(UIGestureRecognizer *sender) {
         // your code...
     }];
-   /// and so on ...
+   /// And so on ...
 ```
-    
-button、segmentedControl、 slider  and so on.  e.g:
+    
+You can bind block callback for button、segmentedControl、 slider  and so on.  e.g:
 
 ```objective-c
     UIButton *button = [[UIButton alloc]initWithFrame:btnFrame];
@@ -108,7 +104,7 @@ button、segmentedControl、 slider  and so on.  e.g:
         // your code...
     }];
     
-    //tip: 和以往一样，当wcblock 捕获了外部变量，可能将导致循环引用 ，你需要用 __weak 避免这样事情发生  
+    //Tip: As in the past, wcblock will capture external variables, which may lead to circular references. You need to use __weak to avoid such a situation.  
     
     UISlider *slider = [[UISlider alloc]initWithFrame:sliderFrame];
     __weak typeof(self) weakSelf = self;
@@ -123,7 +119,7 @@ button、segmentedControl、 slider  and so on.  e.g:
     }];
     [alerView show];
 ```
-textfiled 、searchBar、textView
+You can bind block callback for textfiled 、searchBar、textView
 
 ```objective-c
     UITextField *textfiled = [[UITextField alloc]initWithFrame:textFieldframe];
@@ -177,32 +173,33 @@ textfiled 、searchBar、textView
             return YES;
         }];
     };
-    /// and so on ...
+    /// And so on ...
     
 ``` 
 
-  notificationCenter ,WCBlock 将自动为你管理移除消息中心的observer对象 
+Bind block callback for notificationCenter ,and observer objects will be automatically managed for you to 
+  be removed
   
-  ```objective-c
+ ```objective-c
   
     [WCNotificationCenter wc_addObserverForName:@"wc_note_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
        // your code...
        //NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
     
-     ///异步通知用
+     ///Bind block callback for asynchronous notificationCenter
     [WCNotificationCenter wc_addObserverForName:@"wc_note_demo" object:nil contextObj:self queue:[NSOperationQueue mainQueue] blockNext:^(NSNotification * _Nullable note) {
         // your code...
     }];
     
     ///notification test demo
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [WCNotificationCenter postNotificationName:@"wc_note_demo" object:nil userInfo:@{@"note_demo":@"WCBlock将自动为你管理移除observer对象"}];
+        [WCNotificationCenter postNotificationName:@"wc_note_demo" object:nil userInfo:@{@"note_demo":@"observer objects will be automatically managed for you to be removed"}];
         // your code...
     });
     
 ```
- KVO 
+ Bind block callback for KVO.
  
  ```objective-c 
     [_anObject wc_addObserverForKeyPath:@"keypath0" valueBlockNext:^(NSString *keypath, id ofObj, id oldValue, id newValue) {
@@ -219,7 +216,7 @@ textfiled 、searchBar、textView
         //your code...
     }];
    ```
-  和Apple api 一样 对于KVO 你需要自己移除键值观察，  像这样
+  Same as to Apple API, you need to remove key value observers for your objects , like this.
   
   ```objective-c
   
@@ -231,9 +228,9 @@ textfiled 、searchBar、textView
 }
 
  ```    
- tip:你可以为每个对象绑定多个同样类型的block ，每个block都会调用 ,因为不排除你会在多个地方同时使用，所以你要知道WCBlock是可以做到这点的。 但是记住 handerBlock 除外，它只能绑定一个，因为你并不希望多个hander同时操作一个对象,所以同一个对象 绑定多个同样类型的handerBlock ,这时候只有最后一个有效。e.g：
-   
-像下面的每个block都将调用
+ Tip: you can bind more than one same type of blocks for an object of yours, and each blocks will be called, because you may use them  in different places at the same time. so, you know that WCBlock can do this ,but except the block of handler. For handler block, it can be bound only one of same type, because you dont hope to operate the an object in many places simultaneously. so when an object is bound  more than one same type handler block , it only the last one is valid. E.g:
+
+ Blocks as the follow will be called every one.
 
 ```objective-c
 
@@ -258,7 +255,7 @@ textfiled 、searchBar、textView
     }];
     
 ```
-像下面的 handlerBlock 只有最后一个有效（请注意，它们是 handlerBlock)
+These handler blocks  as follow ,only last one will be effective（becuse they are handler block , you need be knowed for this)
 
 ```objective-c
 
