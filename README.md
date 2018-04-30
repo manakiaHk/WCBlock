@@ -25,6 +25,13 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+Import the main file：
+
+```objective-c
+#import "WCBlock.h"
+
+```
+
 ## Usage
 
    
