@@ -228,7 +228,7 @@ Bind block callback for notificationCenter ,and observer objects will be automa
 }
 
  ```    
- Tip: you can bind more than one same type of blocks for an object of yours, and each blocks will be called, because you may use them  in different places at the same time. so, you know that WCBlock can do this ,but except the block of handler. For handler block, it can be bound only one of same type, because you dont hope to operate the an object in many places simultaneously. so when an object is bound  more than one same type handler block , it only the last one is valid. E.g:
+ Tip: you can bind more than one same type of blocks for an object of yours, and each blocks will be called, because you may use them  in different places at the same time. so, you know that WCBlock can do this ,but except the block of handler. For handler block, it can be bound only one same type handler block, because you dont hope to operate  an object in many places simultaneously. so when an object is bound  more than one same type handler block , it only the last one is valid. E.g:
 
  Blocks as the follow will be called every one.
 
