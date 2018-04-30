@@ -185,7 +185,7 @@ textfiled 、searchBar、textView
   
   ```objective-c
   
-    [WCNotificationCenter wc_addObserverForName:@"wc_noti_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
+    [WCNotificationCenter wc_addObserverForName:@"wc_note_demo" object:nil contextObj:self blockNext:^(NSNotification * _Nullable note) {
        // your code...
        //NSLog(@"%@",note.userInfo[@"note_demo"]);
     }];
