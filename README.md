@@ -1,7 +1,7 @@
 ## WCBlock
 
  * A lightweight block library of UIKit extension , It make your code simple .
- WCBlock是一个无侵入性的轻量级block库，它为NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField等的事件响应提供了很友好的block回调支持。提高代码的聚合度,使编码更简单,提高开发效率。
+ WCBlock是一个无侵入性的轻量级block库，它为NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField等的事件响应提供了很友好的block回调支持。提高代码的聚合度,使编码更加轻松,提高开发效率。
 ## How To Get Started
 
 ## Manual import
