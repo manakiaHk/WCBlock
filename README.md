@@ -1,6 +1,6 @@
 ## WCBlock
 
- * A lightweight block library of UIKit extension , It is non-invasive and make your code simple and easy . It provides friendly block callback support for event response  to NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField and so on . As a result, it  improve the cohesion degree of  code, make coding easier and improve development efficiency for you.
+ * A lightweight event listener library of UIKit  , It is non-invasive and make your code simple and easy . It provides friendly event listener callback support for event response  to NotificationCenter、KVO、Target-action、GestureRecognizer、UIView、UIButton、UITextField and so on . As a result, it  improve the cohesion degree of  code, make coding easier and improve development efficiency for you.
 ## How To Get Started
 
 ## Manual import
