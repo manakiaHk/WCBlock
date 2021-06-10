@@ -1,6 +1,6 @@
 
 Pod::Spec.new do |s|
-  s.name         = "WCBlock"
+  s.name         = "WCBlock-ObjC"
   s.version      = "1.0.3"
   s.summary      = "a lightweight block library of UIKit extension"
   s.description  = <<-DESC
