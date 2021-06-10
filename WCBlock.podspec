@@ -8,9 +8,9 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/manakiaHk/WCBlock"
   s.license      = "MIT"
-  s.author       = { "manakiaHk" => "1085415288@qq.com" }
+  s.author       = { "manakiaHk" => "weichengz0_0@163.com" }
   s.platform     = :ios
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/manakiaHk/WCBlock.git", :tag => s.version }
   s.source_files  = "WCBlock/**/*.{h,m}"
  
