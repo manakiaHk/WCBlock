@@ -15,7 +15,7 @@ source 'https://github.com/manakiaHk/WCBlock.git'
 platform :ios, '7.0'
 
 target 'TargetName' do
-pod 'WCBlock'
+pod 'WCBlock-ObjC'
 end
 ```
 
